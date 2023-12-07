@@ -21,7 +21,7 @@ def main() -> FastAPI:
         allow_methods=["*"],
         allow_headers=["*"],
     )
-    dependencies.setup(app, pool, settings)
+    dependencies.setup(app, pool)
     controllers.setup(app)
     return app
 

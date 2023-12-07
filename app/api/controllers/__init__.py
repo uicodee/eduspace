@@ -1,9 +1,14 @@
 from fastapi import FastAPI
-from .authentication import router as authentication_router
+from .category import router as category_router
+from .article import router as article_router
 
 
 def setup(app: FastAPI) -> None:
     app.include_router(
-        router=authentication_router,
-        tags=["Authentication"]
+        router=category_router,
+        tags=["Category"]
+    )
+    app.include_router(
+        router=article_router,
+        tags=["Article"]
     )
