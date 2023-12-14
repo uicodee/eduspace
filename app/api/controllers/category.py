@@ -40,6 +40,9 @@ async def edit_category(
 
 
 @router.delete(path="/delete")
-async def delete_category(dao: HolderDao = Depends(), category_id: int = Query(alias="categoryId")):
+async def delete_category(
+        category_id: int = Query(alias="categoryId"),
+        dao: HolderDao = Depends(dao_provider)
+):
     return await dao.category.delete_category(category_id=category_id)
 

@@ -11,5 +11,5 @@ class Article(BaseModel):
     title: Mapped[str] = mapped_column(String)
     views: Mapped[int] = mapped_column(Integer, default=0)
     text: Mapped[str] = mapped_column(Text)
-    preview: Mapped[str] = mapped_column(String)
+    preview: Mapped[str] = mapped_column(String, nullable=True)
     category_id: Mapped[int] = mapped_column(ForeignKey("category.id", ondelete="CASCADE"))
